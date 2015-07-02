@@ -17,15 +17,15 @@ namespace ConsoleApplication1
         {
             double a = 0;
             double b = 2;
-            double e = 0.01;
+            double e = 0.1;
             double xk ,lk,fk,yk,zk,fyk,fzk;
             //Shag 3:
-            //xk = (a + b) / 2;
+            xk = (a + b) / 2;
             //Console.WriteLine(xk);
             lk = Math.Abs(b - a);
             //fk =function(xk);
             Shag4:
-            xk = (a + b) / 2;
+            //xk = (a + b) / 2;
             fk = function(xk);
             yk = a + lk / 4;
             zk = b - lk / 4;
@@ -53,8 +53,10 @@ namespace ConsoleApplication1
             {
                 a = yk;
                 b = zk;
+                goto Shag7;
             }
         Shag7:
+            lk = Math.Abs(b - a);
             if (lk < e)
             {
                 goto Finish;
